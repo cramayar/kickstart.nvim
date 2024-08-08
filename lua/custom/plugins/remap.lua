@@ -30,5 +30,12 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- "n" stands for normal mode
+-- <leader>pv is space_bar + p + v
+-- run the Ex command , where Ex stands for explorer command.
+-- While in normal mode if we press <leader> pv execute the command Explorer.
+-- Keybinding to bring the file explorer up
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+
 -- Keybinding for recreational CelluarAutomaton make it rain
 vim.keymap.set('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>')
