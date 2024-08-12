@@ -725,6 +725,9 @@ require('lazy').setup({
 
   { 'eandrju/cellular-automaton.nvim' },
 
+  -- Enable vim-tmux-navigator seemless integration of vim navigation on tmux
+  { 'christoomey/vim-tmux-navigator' },
+
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
