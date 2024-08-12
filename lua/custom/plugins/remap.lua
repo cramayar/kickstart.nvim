@@ -39,3 +39,45 @@ vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 -- Keybinding for recreational CelluarAutomaton make it rain
 vim.keymap.set('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>')
+
+-- Function to surround words with: (), [], {}, <>, '', "", ``, //
+function surround(w_or_W)
+  local open_char = vim.fn.input 'Surround with: '
+  local closed_char = nil
+  if open_char == '(' then
+    closed_char = ')'
+  end
+  if open_char == '[' then
+    closed_char = ']'
+  end
+  if open_char == '{' then
+    closed_char = '}'
+  end
+  if open_char == '<' then
+    closed_char = '>'
+  end
+  if open_char == "'" then
+    closed_char = '"'
+  end
+  if open_char == '"' then
+    closed_char = '"'
+  end
+  if open_char == '`' then
+    closed_char = '`'
+  end
+  if open_char == '/' then
+    closed_char = '/'
+  end
+
+  if w_or_W == 'w' then
+    vim.cmd('normal! ciw' .. open_char)
+  elseif w_or_W == 'W' then
+    vim.cmd([[normal! ciW]] .. open_char)
+  end
+  vim.cmd 'normal! p'
+  vim.cmd('normal! a' .. closed_char)
+  vim.cmd 'normal! a'
+end
+
+vim.keymap.set('n', '<leader>ps', ":lua surround('w')<CR>", { desc = 'Surround word' })
+vim.keymap.set('n', '<leader>pS', ":lua surround('W')<CR>", { desc = 'Surround WORD' })
