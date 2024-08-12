@@ -723,7 +723,7 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  {'eandrju/cellular-automaton.nvim', },
+  { 'eandrju/cellular-automaton.nvim' },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
@@ -805,7 +805,8 @@ require('lazy').setup({
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  -- Enable auto pairing of (), {}, [], "", '', ``
+  require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
