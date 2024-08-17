@@ -4,6 +4,25 @@
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- In insert mode jk will be same as pressing Esc key.
+vim.keymap.set('i', 'jk', '<Esc>')
+
+-- Clear hightlights in normal mode
+vim.keymap.set('n', '<leader>nh', ':nohl<CR>')
+
+-- Delete a character, but don't copy it into a register
+vim.keymap.set('n', 'x', '"_x')
+
+-- Keymaps for managing tabs
+-- New tab
+vim.keymap.set('n', '<leader>to', ':tabnew<CR>')
+-- close current tab
+vim.keymap.set('n', '<leader>tx', ':tabclose<CR>')
+-- go to next tab
+vim.keymap.set('n', '<leader>tn', ':tabn<CR>')
+-- go to previous tab
+vim.keymap.set('n', '<leader>tp', ':tabp<CR>')
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
