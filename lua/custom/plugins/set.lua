@@ -81,3 +81,10 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 8
+
+-- Configure undotree
+vim.opt.swapfile = false
+vim.opt.backup = false
+-- The undo directory: '.undodir' will be created if it does not exist.
+vim.opt.undodir = os.getenv 'HOME' .. '/.undodir'
+vim.opt.undofile = true
