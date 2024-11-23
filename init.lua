@@ -706,25 +706,6 @@ require('lazy').setup({
       }
     end,
   },
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    config = function()
-      require('rose-pine').setup {
-        disable_background = true,
-        styles = {
-          italic = false,
-        },
-      }
-
-      vim.cmd 'colorscheme rose-pine'
-
-      color = color or 'rose-pine'
-      vim.cmd.colorscheme(color)
-      vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-    end,
-  },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -817,6 +798,7 @@ require('lazy').setup({
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
+  require 'custom.plugins.colors.rose-pine',
   require 'custom.plugins.undotree',
   require 'custom.plugins.cellular-automaton',
 
