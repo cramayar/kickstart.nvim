@@ -60,9 +60,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Keybinding to bring the file explorer up
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
--- Keybinding for recreational CelluarAutomaton make it rain
-vim.keymap.set('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>')
-
 -- Function to surround words with: (), [], {}, <>, '', "", ``, //
 function surround(w_or_W)
   local open_char = vim.fn.input 'Surround with: '

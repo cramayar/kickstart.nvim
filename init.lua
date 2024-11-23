@@ -729,8 +729,6 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  { 'eandrju/cellular-automaton.nvim' },
-
   -- Enable vim-tmux-navigator seemless integration of vim navigation on tmux
   { 'christoomey/vim-tmux-navigator' },
 
@@ -820,6 +818,7 @@ require('lazy').setup({
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   require 'custom.plugins.undotree',
+  require 'custom.plugins.cellular-automaton',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
