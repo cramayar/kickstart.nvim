@@ -48,10 +48,10 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-h>', 'wincmd h<CR>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', 'wincmd l<CR>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', 'wincmd j<CR>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', 'wincmd k<CR>', { desc = 'Move focus to the upper window' })
 
 -- "n" stands for normal mode
 -- <leader>pv is space_bar + p + v
@@ -104,7 +104,7 @@ vim.keymap.set('n', '<leader>pS', ":lua surround('W')<CR>", { desc = 'Surround W
 
 -- Integrate tmux navigation
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<leader>h', '<cmd>TmuxNavigateLeft<CR>', { desc = 'Tmux move focus to the left window' })
-vim.keymap.set('n', '<leader>l', '<cmd>TmuxNavigateRight<CR>', { desc = 'Tmux move focus to the right window' })
-vim.keymap.set('n', '<leader>j', '<cmd>TmuxNavigateDown<CR>', { desc = 'Tmux move focus to the lower window' })
-vim.keymap.set('n', '<leader>k', '<cmd>TmuxNavigateUp<CR>', { desc = 'Tmux move focus to the upper window' })
+vim.keymap.set('n', 'C-h', '<cmd>TmuxNavigateLeft<CR>', { desc = 'Tmux move focus to the left window' })
+vim.keymap.set('n', 'C-l', '<cmd>TmuxNavigateRight<CR>', { desc = 'Tmux move focus to the right window' })
+vim.keymap.set('n', 'C-j', '<cmd>TmuxNavigateDown<CR>', { desc = 'Tmux move focus to the lower window' })
+vim.keymap.set('n', 'C-k', '<cmd>TmuxNavigateUp<CR>', { desc = 'Tmux move focus to the upper window' })
