@@ -770,8 +770,8 @@ require('lazy').setup({
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
-  require 'custom.plugins.colors.tokyonight',
-  --  require 'custom.plugins.colors.rose-pine',
+  -- require 'custom.plugins.colors.tokyonight',
+  require 'custom.plugins.colors.rose-pine',
   require 'custom.plugins.undotree',
   require 'custom.plugins.cellular-automaton',
 
