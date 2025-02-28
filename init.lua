@@ -214,7 +214,6 @@ require('lazy').setup({
           F12 = '<F12>',
         },
       },
-
       -- Document existing key chains
       spec = {
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
@@ -279,34 +278,7 @@ require('lazy').setup({
       -- Telescope picker. This is really useful to discover what Telescope can
       -- do as well as how to actually do it!
 
-      -- [[ Configure Telescope ]]
-      -- See `:help telescope` and `:help telescope.setup()`
-      require('telescope').setup {
-        -- You can put your default mappings / updates / etc. in here
-        --  All the info you're looking for is in `:help telescope.setup()`
-        --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
-        pickers = {
-          find_files = {
-            theme = 'dropdown',
-          },
-          grep_string = {
-            theme = 'cursor',
-          },
-          live_grep = {
-            theme = 'cursor',
-          },
-        },
-        extensions = {
-          ['ui-select'] = {
-            require('telescope.themes').get_cursor(),
-          },
-        },
-      }
+      require 'custom.plugins.telescope-config'
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
