@@ -832,9 +832,6 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  -- Enable vim-tmux-navigator seemless integration of vim navigation on tmux
-  { 'christoomey/vim-tmux-navigator' },
-
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
@@ -932,6 +929,7 @@ require('lazy').setup({
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
+  require 'custom.plugins.tmux',
   -- require 'custom.plugins.colors.tokyonight',
   require 'custom.plugins.colors.rose-pine',
   require 'custom.plugins.undotree',
