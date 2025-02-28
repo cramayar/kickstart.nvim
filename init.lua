@@ -467,7 +467,6 @@ require('lazy').setup({
       local servers =
         {
           clangd = {},
-          -- gopls = {},
           gopls = {
             settings = {
               gopls = {
