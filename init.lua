@@ -253,6 +253,7 @@ require('lazy').setup({
           return vim.fn.executable 'make' == 1
         end,
       },
+      { 'nvim-telescope/telescope-file-browser.nvim' },
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
@@ -282,7 +283,10 @@ require('lazy').setup({
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
-      pcall(require('telescope').load_extension, 'ui-select')
+      --    pcall(require('telescope').load_extension, 'ui-select')
+      -- To get telescope-file-browser loaded and working with telescope,
+      -- you need to call load_extension, somewhere after setup function:
+      pcall(require('telescope').load_extension 'file_browser')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -293,6 +297,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind current [W]ord' })
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
       vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
+      vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { desc = '[F]ile [B]rowser' })
       vim.keymap.set('n', '<leader>fm', builtin.man_pages, { desc = '[F]ind [M]an pages' })
       vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
       vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })

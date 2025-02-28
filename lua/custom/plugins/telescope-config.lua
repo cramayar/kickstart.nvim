@@ -85,20 +85,15 @@ require('telescope').setup {
     },
   },
 
-  pickers = {
-    find_files = {
-      theme = 'dropdown',
-    },
-    grep_string = {
-      theme = 'cursor',
-    },
-    live_grep = {
-      theme = 'dropdown',
-    },
-  },
+  pickers = {},
   extensions = {
     ['ui-select'] = {
       require('telescope.themes').get_dropdown(),
+    },
+    ['file_browser'] = {
+      theme = 'dropdown',
+      layout_strategy = 'horizontal',
+      layout_config = { width = 0.5 },
     },
   },
 }
