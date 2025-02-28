@@ -10,7 +10,11 @@ require('telescope').setup {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
-
+    file_sorter = require('telescope.sorters').get_fzy_sorter,
+    color_devicons = true,
+    file_previewer = require('telescope.previewers').vim_buffer_cat.new,
+    grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
+    qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
     prompt_prefix = ' ',
     selection_caret = ' ',
     path_display = { 'smart' },
@@ -80,6 +84,7 @@ require('telescope').setup {
       },
     },
   },
+
   pickers = {
     find_files = {
       theme = 'dropdown',
@@ -88,12 +93,12 @@ require('telescope').setup {
       theme = 'cursor',
     },
     live_grep = {
-      theme = 'cursor',
+      theme = 'dropdown',
     },
   },
   extensions = {
     ['ui-select'] = {
-      require('telescope.themes').get_cursor(),
+      require('telescope.themes').get_dropdown(),
     },
   },
 }
