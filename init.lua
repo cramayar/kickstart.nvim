@@ -925,6 +925,7 @@ require('lazy').setup({
   require 'custom.plugins.cellular-automaton',
 
   require 'custom.plugins.x-ray',
+  require 'custom.plugins.fugitive',
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
