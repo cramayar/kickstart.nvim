@@ -926,6 +926,8 @@ require('lazy').setup({
 
   require 'custom.plugins.x-ray',
   require 'custom.plugins.fugitive',
+  require 'custom.plugins.vimbegood',
+
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
